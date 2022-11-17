@@ -1,2 +1,2 @@
-# hagman
+# hangman
 TOP hagman ruby project
