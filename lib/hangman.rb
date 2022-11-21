@@ -1,5 +1,9 @@
 require_relative 'game'
 
-a = Game.new
+loop do
+  Game.new.game_run
 
-p a.secret_word
+  puts 'Wanna play again? [Y/N]'
+  input = gets.chomp
+  break if input != 'Y' && input != 'y'
+end
