@@ -1,5 +1,9 @@
 require_relative 'game'
 
+def saved_path
+  'saved_hangman.json'
+end
+
 loop do
   Game.new.game_run
 

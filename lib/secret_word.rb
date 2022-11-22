@@ -31,14 +31,17 @@ module SecretWord
 
   def guess_input
     display_player_guess_prompt
-    guess = gets.chomp
-    if hash_guess_inputs[:every_guess].include? guess
+    guess = gets.chomp.downcase
+
+    if guess == 'save'
+      save_game
+    elsif hash_guess_inputs[:every_guess].include? guess
       display_player_repeating_guess
-      guess_input
     else
       hash_guess_inputs[:every_guess].append(guess)
-      guess
+      return guess
     end
+    guess_input
   end
 
   def char_guess(guess)

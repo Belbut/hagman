@@ -1,14 +1,25 @@
 # MessageDisplay stores every message that will be displayed to the player during the game
 module MessageDisplay
   def display_game_intro
+    clean_display
     puts 'Welcome, this simple game was created by Belbut, has a project from TOP'
-    # sleep 3
+    sleep 1
     clean_display
     puts 'In this project we are playing hangman!'
     puts "You will have to guess a word that is 5 to 12 charaters long. \n\n"
     puts 'You can also try to guess wich letters are pressent on the secret word.'
     puts 'Good luck!'
-    # sleep 5
+    sleep 3
+    clean_display
+  end
+
+  def display_load_prompt
+    puts 'Would you like to load last saved file? [yes/no]'
+  end
+
+  def display_do_load_message
+    puts 'Hangman game loaded'
+    sleep 2
     clean_display
   end
 
@@ -19,7 +30,7 @@ module MessageDisplay
     puts "Past chart guesses: #{@hash_guess_inputs[:wrong_chars]}"
     puts "Past word guesses: #{@hash_guess_inputs[:wrong_words]}"
     puts "You have #{@game_lifes_left} lifes left"
-
+    puts 'You can save the game, by printing: "save"'
     puts '_______________________________________________________'
   end
 
